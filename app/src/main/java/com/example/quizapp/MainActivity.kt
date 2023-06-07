@@ -15,7 +15,8 @@ import com.example.quizapp.ui.theme.QuizAppTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
+        setContentView(R.layout.activity_main)
+        /*setContent {
             QuizAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     Greeting("Android")
                 }
             }
-        }
+        }*/
     }
 }
 
