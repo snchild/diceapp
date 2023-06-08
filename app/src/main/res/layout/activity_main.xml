@@ -11,10 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="280dp"
         android:layout_marginEnd="64dp"
-        android:layout_marginBottom="240dp"
-        android:text="Choose a die to roll."
+        android:layout_marginBottom="400dp"
+        android:text="Choose some dice to roll."
         android:textAlignment="center"
         android:textSize="24sp"
         android:visibility="visible"
@@ -28,19 +28,19 @@
         android:layout_width="410dp"
         android:layout_height="1dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="200dp"
         android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseText" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/d4Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="128dp"
         android:text="1d4"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="128dp"
         android:text="1D6"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="128dp"
         android:text="1D8"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,36 +76,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="32dp"
         android:text="1D10"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d4Button" />
 
     <Button
         android:id="@+id/d12Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="32dp"
         android:text="1D12"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/d10Button" />
+        app:layout_constraintStart_toEndOf="@+id/d10Button"
+        app:layout_constraintTop_toBottomOf="@+id/d6Button" />
 
     <Button
         android:id="@+id/d20Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="32dp"
         android:text="1D20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/d12Button" />
+        app:layout_constraintStart_toEndOf="@+id/d12Button"
+        app:layout_constraintTop_toBottomOf="@+id/d8Button" />
 
     <TextView
         android:id="@+id/rolledMessageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="80dp"
         android:text="You rolled:"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,4 +121,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rolledMessageText" />
+
+    <TextView
+        android:id="@+id/diceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0d0"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseText"
+        app:layout_constraintVertical_bias="0.276" />
+
+    <Button
+        android:id="@+id/rollButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Roll"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseText"
+        app:layout_constraintVertical_bias="0.841" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,9 @@ class MainActivity : ComponentActivity() {
         val d10Button = findViewById<Button>(R.id.d10Button)
         val d12Button = findViewById<Button>(R.id.d12Button)
         val d20Button = findViewById<Button>(R.id.d20Button)
+        val rollButton = findViewById<Button>(R.id.rollButton)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
+        val diceTextView = findViewById<TextView>(R.id.diceTextView)
 
         d4Button.setOnClickListener {
             //right now: get random number, display as the result
@@ -59,7 +61,10 @@ class MainActivity : ComponentActivity() {
             val rand = Random.nextInt(20) + 1
             resultTextView.text = rand.toString()
         }
-
+        rollButton.setOnClickListener {
+            val rand = Random.nextInt(100) + 1
+            resultTextView.text = rand.toString()
+        }
 
     }
 }
