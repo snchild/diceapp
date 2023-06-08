@@ -30,23 +30,37 @@ class MainActivity : ComponentActivity() {
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
 
         d4Button.setOnClickListener {
-            //specify what happens when we click the button
             //right now: get random number, display as the result
             val rand = Random.nextInt(4) + 1
             resultTextView.text = rand.toString()
         }
+        d6Button.setOnClickListener {
+            //right now: get random number, display as the result
+            val rand = Random.nextInt(6) + 1
+            resultTextView.text = rand.toString()
+        }
+        d8Button.setOnClickListener {
+            //right now: get random number, display as the result
+            val rand = Random.nextInt(8) + 1
+            resultTextView.text = rand.toString()
+        }
+        d10Button.setOnClickListener {
+            //right now: get random number, display as the result
+            val rand = Random.nextInt(10) + 1
+            resultTextView.text = rand.toString()
+        }
+        d12Button.setOnClickListener {
+            //right now: get random number, display as the result
+            val rand = Random.nextInt(12) + 1
+            resultTextView.text = rand.toString()
+        }
+        d20Button.setOnClickListener {
+            //right now: get random number, display as the result
+            val rand = Random.nextInt(20) + 1
+            resultTextView.text = rand.toString()
+        }
 
-        /*setContent {
-            QuizAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }*/
+
     }
 }
 
