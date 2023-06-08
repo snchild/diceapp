@@ -31,41 +31,81 @@ class MainActivity : ComponentActivity() {
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
         val diceTextView = findViewById<TextView>(R.id.diceTextView)
 
+        //create dictionary that has value of the number of each of the dice
+        val numDiceMap = mutableMapOf<Int, Int>()
+        numDiceMap[4] = 0
+        numDiceMap[6] = 0
+        numDiceMap[8] = 0
+        numDiceMap[10] = 0
+        numDiceMap[12] = 0
+        numDiceMap[20] = 0
+
         d4Button.setOnClickListener {
-            //right now: get random number, display as the result
-            val rand = Random.nextInt(4) + 1
-            resultTextView.text = rand.toString()
+            //increase the number of that type of dice that'll be rolled
+            numDiceMap[4] = (numDiceMap[4] ?:0 ) + 1 //the ?: 0 says to use 0 if numDiceMap[4] is null
+
+            //display the total number of dice rolled
+            diceTextView.text = mapToString(numDiceMap)
         }
         d6Button.setOnClickListener {
-            //right now: get random number, display as the result
-            val rand = Random.nextInt(6) + 1
-            resultTextView.text = rand.toString()
+            //increase the number of that type of dice that'll be rolled
+            numDiceMap[6] = (numDiceMap[6] ?:0 ) + 1
+
+            //display the total number of dice rolled
+            diceTextView.text = mapToString(numDiceMap)
         }
         d8Button.setOnClickListener {
-            //right now: get random number, display as the result
-            val rand = Random.nextInt(8) + 1
-            resultTextView.text = rand.toString()
+            //increase the number of that type of dice that'll be rolled
+            numDiceMap[8] = (numDiceMap[8] ?:0 ) + 1
+
+            //display the total number of dice rolled
+            diceTextView.text = mapToString(numDiceMap)
         }
         d10Button.setOnClickListener {
-            //right now: get random number, display as the result
-            val rand = Random.nextInt(10) + 1
-            resultTextView.text = rand.toString()
+            //increase the number of that type of dice that'll be rolled
+            numDiceMap[10] = (numDiceMap[10] ?:0 ) + 1
+
+            //display the total number of dice rolled
+            diceTextView.text = mapToString(numDiceMap)
         }
         d12Button.setOnClickListener {
-            //right now: get random number, display as the result
-            val rand = Random.nextInt(12) + 1
-            resultTextView.text = rand.toString()
+            //increase the number of that type of dice that'll be rolled
+            numDiceMap[12] = (numDiceMap[12] ?:0 ) + 1
+
+            //display the total number of dice rolled
+            diceTextView.text = mapToString(numDiceMap)
         }
         d20Button.setOnClickListener {
-            //right now: get random number, display as the result
-            val rand = Random.nextInt(20) + 1
-            resultTextView.text = rand.toString()
+            //increase the number of that type of dice that'll be rolled
+            numDiceMap[20] = (numDiceMap[20] ?:0 ) + 1
+
+            //display the total number of dice rolled
+            diceTextView.text = mapToString(numDiceMap)
         }
         rollButton.setOnClickListener {
-            val rand = Random.nextInt(100) + 1
-            resultTextView.text = rand.toString()
+            val result = rollDice(numDiceMap)
+            resultTextView.text = result.toString()
         }
 
+    }
+    private fun mapToString(diceMap: Map<Int, Int>): String{
+        val diceTypes = listOf(4,6,8,10,12,20)
+        var totalString = ""
+        for (type in diceTypes){
+            if ((diceMap[type] != 0) and (totalString == "")){
+                totalString += diceMap[type].toString() + "d" + type.toString()
+            }else if (diceMap[type] != 0){
+                totalString += " + " + diceMap[type].toString() + "d" + type.toString()
+            }
+        }
+        return totalString
+    }
+    private fun rollDice(diceMap: Map<Int, Int>): Int{
+
+        //example syntax:
+        //val rand = Random.nextInt(20) + 1
+        //resultTextView.text = rand.toString()
+        return 0
     }
 }
 
