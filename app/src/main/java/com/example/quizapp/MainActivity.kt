@@ -101,11 +101,18 @@ class MainActivity : ComponentActivity() {
         return totalString
     }
     private fun rollDice(diceMap: Map<Int, Int>): Int{
+        val diceTypes = listOf(4,6,8,10,12,20)
+        var totalRoll = 0
 
-        //example syntax:
-        //val rand = Random.nextInt(20) + 1
-        //resultTextView.text = rand.toString()
-        return 0
+        for (type in diceTypes){
+            //for the number of diceMap[type] <- needs to not go through if number = 0
+            for (i in 0 until (diceMap[type] ?: 0))
+            {
+                val rand = Random.nextInt(type) + 1
+                totalRoll += rand
+            }
+        }
+        return totalRoll
     }
 }
 
