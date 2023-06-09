@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
         val d12Button = findViewById<Button>(R.id.d12Button)
         val d20Button = findViewById<Button>(R.id.d20Button)
         val rollButton = findViewById<Button>(R.id.rollButton)
+        val clearButton = findViewById<Button>(R.id.clearButton)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
         val diceTextView = findViewById<TextView>(R.id.diceTextView)
 
@@ -85,6 +86,20 @@ class MainActivity : ComponentActivity() {
         rollButton.setOnClickListener {
             val result = rollDice(numDiceMap)
             resultTextView.text = result.toString()
+        }
+        clearButton.setOnClickListener {
+            //clear the numDiceMap
+            numDiceMap[4] = 0
+            numDiceMap[6] = 0
+            numDiceMap[8] = 0
+            numDiceMap[10] = 0
+            numDiceMap[12] = 0
+            numDiceMap[20] = 0
+
+            //clear resultTextView
+            resultTextView.text = ""
+            //clear diceTextView
+            diceTextView.text = "0d0"
         }
 
     }
