@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -23,5 +24,12 @@ class SecondScreen : ComponentActivity() {
         // roll button
         // 10 results
         // button to switch to main screen
+        val switchScreenButton = findViewById<Button>(R.id.switchToDndButton)
+
+        switchScreenButton.setOnClickListener {
+            //switch screens
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
