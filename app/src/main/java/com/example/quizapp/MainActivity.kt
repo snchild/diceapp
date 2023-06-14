@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -31,6 +32,7 @@ class MainActivity : ComponentActivity() {
         val clearButton = findViewById<Button>(R.id.clearButton)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
         val diceTextView = findViewById<TextView>(R.id.diceTextView)
+        val switchScreenButton = findViewById<Button>(R.id.switchScreenButton)
 
         //create dictionary that has value of the number of each of the dice
         val numDiceMap = mutableMapOf<Int, Int>()
@@ -100,6 +102,11 @@ class MainActivity : ComponentActivity() {
             resultTextView.text = ""
             //clear diceTextView
             diceTextView.text = "0d0"
+        }
+        switchScreenButton.setOnClickListener {
+            //switch screens
+            val intent = Intent(this, SecondScreen::class.java)
+            startActivity(intent)
         }
 
     }
