@@ -1,13 +1,10 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -31,6 +28,7 @@ class MainActivity : ComponentActivity() {
         val clearButton = findViewById<Button>(R.id.clearButton)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
         val diceTextView = findViewById<TextView>(R.id.diceTextView)
+        val switchScreenButton = findViewById<Button>(R.id.switchTo10D6Button)
 
         //create dictionary that has value of the number of each of the dice
         val numDiceMap = mutableMapOf<Int, Int>()
@@ -100,6 +98,11 @@ class MainActivity : ComponentActivity() {
             resultTextView.text = ""
             //clear diceTextView
             diceTextView.text = "0d0"
+        }
+        switchScreenButton.setOnClickListener {
+            //switch screens
+            val intent = Intent(this, SecondScreen::class.java)
+            startActivity(intent)
         }
 
     }
