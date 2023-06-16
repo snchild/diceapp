@@ -10,7 +10,7 @@ I created this app as a way to learn how to create apps, as well as become famil
 
 Below is a link to a YouTube video where I walk through my code and demonstrate my app.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/GvknPonL_ls)
 
 # Development Environment
 
